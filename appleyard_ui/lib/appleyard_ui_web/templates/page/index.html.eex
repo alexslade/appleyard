@@ -1,0 +1,5 @@
+<section class="row">
+  <article class="column">
+    <%= Enum.random(0..10000) %>
+  </article>
+</section>
