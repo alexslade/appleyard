@@ -38,8 +38,12 @@ defmodule AppleyardFirmware.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # UI app
+      #  UI app
       {:appleyard_ui, path: "../appleyard_ui"},
+
+      #  Application code
+      {:mix_test_watch, "~> 0.8", only: :dev, runtime: false},
+      {:mox, "~> 0.5", only: :test},
 
       # Dependencies for all targets
       {:nerves, "~> 1.5.0", runtime: false},
@@ -59,7 +63,7 @@ defmodule AppleyardFirmware.MixProject do
       {:nerves_system_rpi3a, "~> 1.8", runtime: false, targets: :rpi3a},
       {:nerves_system_rpi4, "~> 1.8", runtime: false, targets: :rpi4},
       {:nerves_system_bbb, "~> 2.3", runtime: false, targets: :bbb},
-      {:nerves_system_x86_64, "~> 1.8", runtime: false, targets: :x86_64},
+      {:nerves_system_x86_64, "~> 1.8", runtime: false, targets: :x86_64}
     ]
   end
 

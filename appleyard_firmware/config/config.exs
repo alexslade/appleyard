@@ -21,12 +21,12 @@ config :appleyard_ui, AppleyardUiWeb.Endpoint,
 
 config :appleyard_firmware, target: Mix.target()
 
+config :appleyard_firmware, :network_module, NervesMock.Network
+
 # Customize non-Elixir parts of the firmware. See
 # https://hexdocs.pm/nerves/advanced-configuration.html for details.
 
 config :nerves, :firmware, rootfs_overlay: "rootfs_overlay"
-
-
 
 # Use shoehorn to start the main application. See the shoehorn
 # docs for separating out critical OTP applications such as those
