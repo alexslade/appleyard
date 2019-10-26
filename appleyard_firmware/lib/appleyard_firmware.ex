@@ -3,29 +3,30 @@ defmodule AppleyardFirmware do
   Documentation for AppleyardFirmware.
   """
 
-  # TODO: I really don't like how Mox is working here. Am I using the library idiomatically? The problem stems from the
-  #       need to have a fake Nerves.Network module in development as well.
+  # TODO: I don't like this setup for the doctests, it seems kinda useless to have this setup here - move to a test?
 
   @doc """
   Wifi stats
 
   ## Examples
 
+      iex> :rand.seed(:exsplus, {1,2,3})
       iex> NervesMock.NetworkMock |> expect(:scan, &NervesMock.Network.scan/1)
       iex> AppleyardFirmware.wifi_stats
       %{
-        level: -56,
-        noise: -89,
-        snr: 33
+        level: -87,
+        noise: -48,
+        snr: 20
       }
 
   """
 
   def wifi_stats do
-    with networks <- network().scan("wlan0"),
-         internet <- Enum.find(networks, &(&1[:ssid] == "The Internet")) do
-      extract_stats(internet)
-    end
+    # with networks <- network().scan("wlan0"),
+    #      internet <- Enum.find(networks, &(&1[:ssid] == "The Internet")) do
+    #   extract_stats(internet)
+    # end
+    Enum.random(0..100)
   end
 
   defp extract_stats(nil), do: :unavailable
