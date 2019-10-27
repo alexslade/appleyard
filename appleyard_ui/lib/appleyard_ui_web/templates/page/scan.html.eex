@@ -1,5 +1,0 @@
-<section class="row">
-  <article class="column">
-    <%= inspect(@stats) %>
-  </article>
-</section>
