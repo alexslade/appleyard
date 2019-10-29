@@ -39,7 +39,7 @@ defmodule AppleyardFirmware.MixProject do
   defp deps do
     [
       #  UI app
-      {:appleyard_ui, path: "../appleyard_ui"},
+      {:appleyard, path: "../appleyard"},
 
       #  Application code
       {:mix_test_watch, "~> 0.8", only: :dev, runtime: false},

@@ -6,10 +6,10 @@
 use Mix.Config
 
 # When we deploy to a device, we use the "prod" configuration:
-import_config "../../appleyard_ui/config/config.exs"
-import_config "../../appleyard_ui/config/prod.exs"
+import_config "../../appleyard/config/config.exs"
+import_config "../../appleyard/config/prod.exs"
 
-config :appleyard_ui, AppleyardUiWeb.Endpoint,
+config :appleyard, AppleyardWeb.Endpoint,
   # Nerves root filesystem is read-only, so disable the code reloader
   code_reloader: false,
   http: [port: 80],
