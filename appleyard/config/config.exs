@@ -14,7 +14,7 @@ config :appleyard, AppleyardWeb.Endpoint,
   render_errors: [view: AppleyardWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Appleyard.PubSub, adapter: Phoenix.PubSub.PG2]
 
-config :appleyard, :network_service, Appleyard.Network.FakeService
+config :appleyard, :network_service, Services.Network.Mock
 
 # Configures Elixir's Logger
 config :logger, :console,
