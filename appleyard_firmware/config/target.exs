@@ -31,8 +31,8 @@ config :nerves_firmware_ssh,
 node_name = if Mix.env() != :prod, do: "appleyard_firmware"
 
 config :nerves_init_gadget,
-  ifname: "usb0",
-  address_method: :dhcpd,
+  ifname: "wlan0",
+  address_method: :dhcp,
   mdns_domain: "nerves.local",
   node_name: node_name,
   node_host: :mdns_domain
@@ -40,9 +40,11 @@ config :nerves_init_gadget,
 config :nerves_network, :default,
   wlan0: [
     ssid: "The Internet",
-    psk: "just read the instructions",
+    psk: File.read!(Path.join([System.user_home!(), ".wifi"])),
     key_mgmt: String.to_atom("WPA-PSK")
   ]
+
+config :appleyard, :network_service, Nerves.Network
 
 # Import target specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
