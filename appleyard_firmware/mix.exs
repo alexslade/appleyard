@@ -57,8 +57,8 @@ defmodule AppleyardFirmware.MixProject do
 
       # Dependencies for specific targets
       {:nerves_system_rpi, "~> 1.10", runtime: false, targets: :rpi},
-      {:nerves_system_rpi0, "~> 1.10", runtime: false, targets: :rpi0},
-      {:python_rpi0, "~> 1.10", path: "../../python_rpi0", runtime: false, targets: :python_rpi0}
+      {:python_rpi0, "~> 1.11",
+       path: "../../python_rpi0", runtime: false, targets: :python_rpi0, nerves: [compile: true]}
     ]
   end
 

@@ -1,1 +1,3 @@
 <%= inspect Appleyard.Network.signal_strength %>
+
+<%= System.cmd("python", ["-c", "print(5)"]) |> elem(0) %>
